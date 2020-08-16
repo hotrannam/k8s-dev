@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: edge-proxy
+spec:
+  type: NodePort
+  selector:
+    app: edge-proxy
+  ports:
+    - name: edge-proxy
+      protocol: TCP
+      port: 30000
+      targetPort: 30000

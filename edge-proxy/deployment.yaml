@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: edge-proxy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: edge-proxy
+  template:
+    metadata:
+      labels:
+        app: edge-proxy
+    spec:
+      containers:
+      - name: edge-proxy
+        image: edge-proxy:dev
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 30000
+          protocol: TCP

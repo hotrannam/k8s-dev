@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ping-svc
+spec:
+  selector:
+    app: ping-svc
+  type: ClusterIP
+  ports:
+  - name: ping-svc
+    protocol: TCP
+    port: 8080

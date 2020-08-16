@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pong-svc
+spec:
+  selector:
+    app: pong-svc
+  type: ClusterIP
+  ports:
+  - name: pong-svc
+    protocol: TCP
+    port: 8080
