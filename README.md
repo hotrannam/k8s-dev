@@ -1,4 +1,4 @@
-## Deploy Envoy as an edge proxy
+## Use Envoy as an edge proxy
 
 We will use `Minikube` and `Envoy` for this demo.
 
