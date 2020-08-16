@@ -1,14 +1,14 @@
-## Use Envoy as an edge proxy
+## The tools
 
-We will use `Minikube` and `Envoy` for this demo.
-
-To start Minikube
+We will use `Minikube` for local development and deployment. To start Minikube
 
 ```minikube start --vm=true```
 
 and then hook up the Minikube Docker daemon for local Docker images once Minikube started.
 
 ```eval $(minikube docker-env)```
+
+## Use Envoy as an edge proxy
 
 Deploy `ping` and `pong` services
 
