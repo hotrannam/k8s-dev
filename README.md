@@ -13,13 +13,13 @@ and then hook up the Minikube Docker daemon for local Docker images once Minikub
 Deploy `ping` and `pong` services
 
 ```
-bash up.sh ping-svc
-bash up.sh pong-svc
+./deploy/up.sh ping-svc
+./deploy/up.sh pong-svc
 ```
 
 and the `edge-proxy` to Minikube
 
-```bash up.sh edge-proxy```
+```./deploy/up.sh edge-proxy```
 
 Now check the edge proxy should work
 

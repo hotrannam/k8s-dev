@@ -9,5 +9,8 @@ if [ -z "$DIR" ]; then
   exit 1
 fi
 
-kubectl delete -f ${DIR}/deployment.yaml
-kubectl delete -f ${DIR}/service.yaml
+DIR="$(dirname $0)/../${DIR}"
+
+cd "${DIR}" && sh build.sh "${DIR}"
+
+cd "deploy" && kubectl delete -f .
