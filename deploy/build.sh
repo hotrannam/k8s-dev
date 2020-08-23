@@ -1,10 +1,16 @@
 #!/bin/bash
 
-DIR=$(dirname $1)
-NAME=$(basename $1)
+set -e
 
-docker build -t ${NAME}:dev ${DIR}
+DIR="$1"
+DEPLOYDIR="$(dirname $0)"
+TARGETDIR="${DEPLOYDIR}/../${DIR}"
+DOCKERFILE="${TARGETDIR}/Dockerfile"
 
-if [ -n "" ]; then
-  docker tag ${NAME}:dev ${NAME}:dev
+if [ -f "$DOCKERFILE" ]; then
+  docker build -t ${DIR}:dev ${TARGETDIR}
+
+  if [ -n "" ]; then
+    docker tag ${DIR}:dev ${DIR}:dev
+  fi
 fi

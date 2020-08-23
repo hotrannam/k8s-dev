@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sidecar
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sidecar
+  template:
+    metadata:
+      labels:
+        app: sidecar
+    spec:
+      containers:
+      - name: sidecar
+        image: sidecar:dev
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 32000
+          protocol: TCP
+      - name: ping-svc
+        image: ping-svc:dev
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8080
